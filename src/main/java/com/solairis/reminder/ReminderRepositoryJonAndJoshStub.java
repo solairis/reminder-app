@@ -19,10 +19,10 @@ class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
 	public ReminderRepositoryJonAndJoshStub() {
 		this.reminderMap = new HashMap<String, List<Reminder>>() {{
 			put("joshpauljohnson@gmail.com", new ArrayList<Reminder>(){{
-				add(new Reminder("Chop wood, carry water"));
+				add(new Reminder("Chop wood, carry water", "joshpauljohnson@gmail.com"));
 			}});
 			put("jskulski@gmail.com", new ArrayList<Reminder>(){{
-				add(new Reminder("Chop wood, carry water"));
+				add(new Reminder("Chop wood, carry water", "jskulski@gmail.com"));
 			}});
 		}};
 		

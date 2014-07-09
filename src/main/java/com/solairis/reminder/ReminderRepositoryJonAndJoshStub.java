@@ -32,6 +32,11 @@ class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
 	@Override
 	public Reminder findRandom(String email) {
 		List<Reminder> reminders = this.reminderMap.get(email);
+		
+		if (reminders == null) {
+			throw new RemindersNotFound("No reminders found for "+email);
+		}
+		
 		int randomIndex = resolveRandomIndex(reminders);
 		return reminders.get(randomIndex);
 	}

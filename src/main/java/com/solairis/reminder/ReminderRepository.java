@@ -7,6 +7,6 @@ package com.solairis.reminder;
  */
 interface ReminderRepository {
 
-	public void findRandom(String someemail);
+	public Reminder findRandom(String someemail);
 	
 }

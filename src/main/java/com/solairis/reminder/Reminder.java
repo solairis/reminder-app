@@ -5,7 +5,7 @@ package com.solairis.reminder;
  *
  * @author joshjohnson
  */
-class Reminder {
+public class Reminder {
 	
 	private final String content;
 
@@ -13,7 +13,7 @@ class Reminder {
 		this.content = content;
 	}
 
-	String getContent() {
+	public String getContent() {
 		return this.content;
 	}
 	

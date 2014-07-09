@@ -38,6 +38,8 @@ public class ReminderCommandLineRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		validateCommandLineOptions();
+		
+		Reminder reminder = this.reminderRepository.findRandom(this.commandLineOptions.getEmail());
 		System.out.println("Reminder sent for "+this.commandLineOptions.getEmail());
 	}
 

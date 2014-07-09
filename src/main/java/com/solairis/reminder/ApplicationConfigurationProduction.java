@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
-/**
- *
- * @author joshjohnson
- */
+
 @Configuration
 @Profile("production")
 @PropertySource("file:application.properties")
@@ -27,6 +24,9 @@ public class ApplicationConfigurationProduction {
 	@Value("${twilio.account.sid}")
 	private String twilioAccountSid;
 	
+	@Value("${twilio.from.phone}")
+	private String twilioFromPhone;
+	
 	@Bean
 	public ReminderRepository getReminderRepository() {
 		return new ReminderRepositoryJonAndJoshStub();
@@ -38,13 +38,8 @@ public class ApplicationConfigurationProduction {
 	}
 	
 	@Bean
-	public String getTwilioFromPhone() {
-		return "+17166163356";
-	}
-	
-	@Bean
 	public ReminderDelivery getReminderDelivery() {
-		return new ReminderDeliveryTwilio(getTwilioRestClient(), getTwilioFromPhone(), this.userRepository);
+		return new ReminderDeliveryTwilio(getTwilioRestClient(), twilioFromPhone, this.userRepository);
 	}
 	
 }

@@ -32,10 +32,15 @@ class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
 	@Override
 	public Reminder findRandom(String email) {
 		List<Reminder> reminders = this.reminderMap.get(email);
+		int randomIndex = resolveRandomIndex(reminders);
+		return reminders.get(randomIndex);
+	}
+
+	private int resolveRandomIndex(List<Reminder> reminders) {
 		int max = reminders.size() - 1;
 		int min = 0;
 		int randomIndex = rand.nextInt((max - min) + 1) + min;
-		return reminders.get(randomIndex);
+		return randomIndex;
 	}
 	
 }

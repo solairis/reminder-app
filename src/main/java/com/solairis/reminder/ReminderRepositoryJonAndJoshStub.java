@@ -37,12 +37,12 @@ public class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
 			throw new RemindersNotFound("No reminders found for "+email);
 		}
 		
-		int randomIndex = resolveRandomIndex(reminders);
+		int randomIndex = resolveRandomIndex(reminders.size());
 		return reminders.get(randomIndex);
 	}
-
-	private int resolveRandomIndex(List<Reminder> reminders) {
-		int max = reminders.size() - 1;
+	
+	private int resolveRandomIndex(int collectionSize) {
+		int max = collectionSize - 1;
 		int min = 0;
 		int randomIndex = rand.nextInt((max - min) + 1) + min;
 		return randomIndex;

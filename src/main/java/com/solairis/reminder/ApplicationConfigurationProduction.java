@@ -33,18 +33,8 @@ public class ApplicationConfigurationProduction {
 	}
 	
 	@Bean
-	public String getTwilioAccountSid() {
-		return this.twilioAccountSid;
-	}
-	
-	@Bean
-	public String getTwilioAuthToken() {
-		return this.twilioAuthToken;
-	}
-	
-	@Bean
 	public TwilioRestClient getTwilioRestClient() {
-		return new TwilioRestClient(getTwilioAccountSid(), getTwilioAuthToken());
+		return new TwilioRestClient(this.twilioAccountSid, this.twilioAuthToken);
 	}
 	
 	@Bean

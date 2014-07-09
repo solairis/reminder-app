@@ -1,6 +1,11 @@
 
-package com.solairis.reminder;
+package com.solairis.reminder.config;
 
+import com.solairis.reminder.ReminderDelivery;
+import com.solairis.reminder.ReminderDeliveryTwilio;
+import com.solairis.reminder.ReminderRepository;
+import com.solairis.reminder.ReminderRepositoryJonAndJoshStub;
+import com.solairis.reminder.UserRepository;
 import com.twilio.sdk.TwilioRestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author joshjohnson
  */
-class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
+public class ReminderRepositoryJonAndJoshStub implements ReminderRepository {
 	
 	private Map<String, List<Reminder>> reminderMap;
 	private Random rand;

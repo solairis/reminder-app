@@ -18,5 +18,9 @@ public class Reminder {
 	public String getContent() {
 		return this.content;
 	}
+
+	public String getEmail() {
+		return email;
+	}
 	
 }

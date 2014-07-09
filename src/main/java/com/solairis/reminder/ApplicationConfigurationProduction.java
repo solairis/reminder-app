@@ -2,6 +2,7 @@
 package com.solairis.reminder;
 
 import com.twilio.sdk.TwilioRestClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -13,6 +14,9 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("production")
 public class ApplicationConfigurationProduction {
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Bean
 	public ReminderRepository getReminderRepository() {
@@ -41,7 +45,7 @@ public class ApplicationConfigurationProduction {
 	
 	@Bean
 	public ReminderDelivery getReminderDelivery() {
-		return new ReminderDeliveryTwilio(getTwilioRestClient(), getTwilioFromPhone());
+		return new ReminderDeliveryTwilio(getTwilioRestClient(), getTwilioFromPhone(), this.userRepository);
 	}
 	
 }

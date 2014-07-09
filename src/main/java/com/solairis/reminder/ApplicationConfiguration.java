@@ -16,4 +16,9 @@ public class ApplicationConfiguration {
 		return new CommandLineOptions();
 	}
 	
+	@Bean
+	public ReminderRepository getReminderRepository() {
+		return new ReminderRepositoryJonAndJoshStub();
+	}
+	
 }

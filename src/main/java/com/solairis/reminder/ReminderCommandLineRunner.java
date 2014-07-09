@@ -31,6 +31,9 @@ public class ReminderCommandLineRunner implements CommandLineRunner {
 	
 	@Autowired
 	private CommandLineOptions commandLineOptions;
+	
+	@Autowired
+	private ReminderRepository reminderRepository;
 
 	@Override
 	public void run(String... args) {
